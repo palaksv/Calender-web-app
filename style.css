@@ -1,17 +1,19 @@
+
 #calender{
   width: 80%;
   margin-left: 10%;
   margin-top: 60px;
 }
 .calenderTable{
-  width:100%;
+  margin: auto;
+  width:90%;
   border: 1px solid black;
 }
 .calenderTable thead tr th{
   background-color: rgb(6, 6, 6);
   border-bottom: 1px solid black;
   padding: 20px 0px;
-  color: white;
+  color: rgb(253, 253, 251);
 
 
 }
@@ -20,11 +22,12 @@
   padding: 20px 0px;
   border: 1px solid white;
   cursor: pointer;
-  background: rgb(150, 150, 150);
+  background: rgb(245, 240, 192);
 }
 .calenderBtns{
-  padding: 10px 0px;
+  
   width: 100%;
+  
 }
 .calenderBtns button{
   padding: 6px 12px;
@@ -38,4 +41,7 @@
 }
 #calenderTable_1{
   display: block;
+}
+#heading{
+  text-align: center;
 }

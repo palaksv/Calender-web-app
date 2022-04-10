@@ -39,7 +39,7 @@ function getDatesBetween(date1, date2) {
      firstDate = new Date(dates[i].getFullYear(), dates[i].getMonth(), 1);
     content += "<div id='calenderTable_" + (i + 1) + "' class='calenderDiv'>";
     content +=
-      "<h2>" +
+      "<h2 id='heading'>" +
       firstDate.toString().split(" ")[1] +
       "-" +
       firstDate.getFullYear() +
@@ -47,7 +47,7 @@ function getDatesBetween(date1, date2) {
       content+="<table class='calenderTable'>";
       content+="<thead>";
       weekDays.map(item=>{
-        content+="<th>"+item.fullDay+"</th>";
+        content+="<th>"+item.shortDay+"</th>";
       })
       content+="</thead>";
       content+="<tbody>";
@@ -62,7 +62,7 @@ function getDatesBetween(date1, date2) {
           {
             if(firstDate.toString().split(" ")[0]==weekDays[k].shortDay)
             {
-              content+="<td>"+displayNum+"</td>";
+              content+="<td onclick='handleClick()' >"+displayNum+"</td>";
               j++;
             }
             else
@@ -76,7 +76,7 @@ function getDatesBetween(date1, date2) {
           }
           else
           {
-            content+="<td>"+displayNum+"</td>";
+            content+="<td onclick='handleClick()'>"+displayNum+"</td>";
               j++;
           }
         }
@@ -92,6 +92,7 @@ function getDatesBetween(date1, date2) {
   }
   return content;
 }
+
 
 function callprev(){
 
@@ -130,6 +131,26 @@ function callnext(){
     }
    }
 }
+function handleClick()
+{
+ 
+
+
+  var message_alert = $('<p>Do you want to schedule a task?</p>').dialog({
+    buttons: {
+        "Yes": function() {
+          window.open("./todo.html", '_blank');
+      },
+        "No":  function() {message_alert.dialog('close');},
+        "Cancel":  function() {
+            alert('you clicked on cancel');
+            message_alert.dialog('close');
+        }
+    }
+ });
+}
+// document.querySelector("td").addEventListener("click",handleClick);
+
 
 let content = getDatesBetween("2022/01/01", "2023/01/01");
 document.getElementById("calender").innerHTML = content;
