@@ -131,24 +131,35 @@ function callnext(){
     }
    }
 }
-function handleClick()
-{
+
+
  
 
 
-  var message_alert = $('<p>Do you want to schedule a task?</p>').dialog({
-    buttons: {
-        "Yes": function() {
-          window.open("./todo.html", '_blank');
-      },
-        "No":  function() {message_alert.dialog('close');},
-        "Cancel":  function() {
-            alert('you clicked on cancel');
-            message_alert.dialog('close');
-        }
-    }
- });
-}
+//   var message_alert = $('<p>Do you want to schedule a task?</p>').dialog({
+//     buttons: {
+//         "Yes": function() {
+//           window.open("./todo.html", '_blank');
+//       },
+//         "No":  function() {message_alert.dialog('close');},
+//         "Cancel":  function() {
+//             alert('you clicked on cancel');
+//             message_alert.dialog('close');
+//         }
+//     }
+//  });
+
+
+function handleClick() {
+               var retVal = confirm("Do you want to schedule a task ?");
+               if( retVal == true ) {
+                window.open("./todo.html", '_blank');
+                  return true;
+               } else {
+                 
+                  return false;
+               }
+            }
 // document.querySelector("td").addEventListener("click",handleClick);
 
 
