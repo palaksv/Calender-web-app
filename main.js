@@ -1,13 +1,4 @@
-/*WE WANT TO DISPLAY THIS ONLY WHEN CLICKED SO WE ADD THROUGH JS
-<div class="note">
-<div class="operation">
-    <button class="edit"> <i class="fas fa-edit"></i> </button>
-    <button class="delete"> <i class="fas fa-trash-alt"></i> </button>
-</div>
 
-<div class="main"></div>
-<textarea ></textarea>
-</div>*/
 
 const addButton = document.querySelector('#add');
 
